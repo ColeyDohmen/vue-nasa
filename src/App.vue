@@ -7,15 +7,17 @@
         </div>
       </div>
     </header>
-    <main class="container">
+    <main class="container-fluid">
       <div class="row justify-content-center">
         <div class="col">
           <form @submit.prevent="search">
-            <input class="mx-2 my-2" type="date" v-model="state.query" />
+            <input class="mx-2 my-3" type="date" v-model="state.query" />
             <button type="submit" class="btn btn-primary">Search</button>
           </form>
         </div>
-        <Picture />
+        <div class="col-12">
+          <Picture />
+        </div>
       </div>
     </main>
     <footer class="container-fluid bg-primary text-light">
@@ -77,5 +79,7 @@ export default {
 
 main {
   flex-grow: 1;
+  background-image: url("http://cdn.mos.cms.futurecdn.net/M7fDTpDnJcZ4dt3myngzxi.jpg");
+  background-size: cover, 100%;
 }
 </style>
