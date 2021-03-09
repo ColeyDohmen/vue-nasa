@@ -1,15 +1,23 @@
 <template>
-  <div class="component"></div>
+  <div class="picture">
+    <img :src="state.picture.url" />
+  </div>
 </template>
 
 <script>
 import { computed, reactive } from 'vue'
-import { AppState } from './AppState'
+import { AppState } from '../AppState'
 
 export default {
   name: 'picture',
   setup() {
-    return {}
+    const state = reactive({
+      picture: computed(() => AppState.picture)
+    })
+
+    return {
+      state
+    }
   },
   components: {}
 }

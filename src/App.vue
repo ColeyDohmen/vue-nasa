@@ -8,25 +8,23 @@
       </div>
     </header>
     <main class="container">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col">
           <form @submit.prevent="search">
-            <input
-              class="mx-2 my-2"
-              type="date"
-              placeholder=""
-              v-model="state.query"
-            />
+            <input class="mx-2 my-2" type="date" v-model="state.query" />
             <button type="submit" class="btn btn-primary">Search</button>
           </form>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <Picture />
-        </div>
+        <Picture />
       </div>
     </main>
+    <footer class="container-fluid bg-primary text-light">
+      <div class="row">
+        <div class="col text-center">
+          <p class="m-3"><b>L o o k . u p o n . t h e . s t a r s</b></p>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -34,6 +32,7 @@
 import { computed, reactive } from 'vue'
 import { pictureService } from './services/PictureService'
 import { AppState } from './AppState'
+import Picture from './components/Picture'
 
 export default {
   name: 'App',
@@ -55,7 +54,7 @@ export default {
     }
   },
   components: {
-    // picture
+    Picture
   }
 }
 
@@ -68,6 +67,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
 </style>

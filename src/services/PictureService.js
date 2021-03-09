@@ -3,8 +3,8 @@ import { nasaApi } from './AxiosService'
 
 class PictureService {
   async searchPicture(query) {
-    const res = await nasaApi.get(query)
-    AppState.picture = res.data.results
+    const res = await nasaApi.get('apod?api_key=vRfVTqprAhtz5hkiTLinoIeW3KNdeNnzE0xoqPjZ&date=' + query)
+    AppState.picture = res.data
   }
 }
 
